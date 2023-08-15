@@ -1,0 +1,19 @@
+# action.yml
+name: 'One Password CLI'
+description: 'Convert 1Password secrets to name=value'
+inputs:
+  vault:
+    description: 'The vault to hit'
+    required: true
+  tags:
+    description: 'The tag or tags (1Password tags) to filter with'
+    required: true
+outputs:
+  fly_secrets:
+    description: 'the fly secrets in name=value format'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.vault }}
+    - ${{ inputs.tags }}
