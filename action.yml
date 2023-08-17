@@ -5,9 +5,6 @@ inputs:
   vault:
     description: 'The vault to hit'
     required: true
-  tags:
-    description: 'The tag or tags (1Password tags) to filter with'
-    required: true
 outputs:
   fly_secrets:
     description: 'the fly secrets in name=value format'
