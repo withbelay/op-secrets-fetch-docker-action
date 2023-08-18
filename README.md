@@ -20,7 +20,6 @@ The fly secrets
 
 ## Example usage
 
-uses: actions/hello-world-docker-action@v2
+uses: actions/hello-world-docker-action@v2.0.1
 with:
   vault: devops-staging
-  app: api
