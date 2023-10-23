@@ -1,15 +1,16 @@
 # action.yml
-name: 'One Password CLI'
-description: 'Convert 1Password secrets to name=value'
+name: 'Sync 1P Vault to Fly'
+description: 'Sync 1Password secrets to a Fly app'
 inputs:
   vault:
-    description: 'The vault to hit'
+    description: 'The 1P vault'
     required: true
-outputs:
-  fly_secrets:
-    description: 'the fly secrets in name=value format'
+  fly_app:
+    description: 'The fly app'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.vault }}
+    - ${{ inputs.fly_app }}
